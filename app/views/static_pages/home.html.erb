@@ -1,0 +1,14 @@
+<% provide(:title, 'Home') %>
+<div class="center hero-unit">
+  <h1>Welcome to the HeatWave</h1>
+  <h2>
+    This is the HeatWave page for the
+    <a href="https://www.kildonan.org.au/">Kildonan</a>
+  </h2>
+  <% if !signed_in? %>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  <% else %>
+  <li><%= link_to "Visit my page", current_user %></li>
+  <% end -%>
+</div>
+

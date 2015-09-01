@@ -1,0 +1,23 @@
+<% provide(:title, @user.username) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.username %>
+      </h1>
+      <h4>
+        <%= @user.email %>
+      </h4>
+      <h4>
+        <%= @user.phone_number %>
+      </h4>
+      
+    </section>
+  </aside>
+</div>
+<body>
+  <%= link_to "My Attributes", '#', class: "btn btn-large btn-success" %>
+  <%= link_to "Update Profie", edit_user_path(current_user), class: "btn btn-large btn-success" %>
+  <%= link_to "Feedback", '#', class: "btn btn-large btn-success" %>
+</body>

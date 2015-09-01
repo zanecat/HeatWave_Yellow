@@ -5,10 +5,12 @@
     This is the HeatWave page for the
     <a href="https://www.kildonan.org.au/">Kildonan</a>
   </h2>
-  <% if !signed_in? %>
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-  <% else %>
-  <li><%= link_to "Visit my page", current_user %></li>
+  <% if admin_signed_in? %>
+    <%= link_to "Visit my page", current_admin, class: "btn btn-primary btn-primary" %>
+  <% elsif signed_in %>
+    <%= link_to "Visit my page", current_user, class: "btn btn-primary btn-primary" %>
+  <%else %>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-primary btn-primary" %>
   <% end -%>
 </div>
 

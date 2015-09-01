@@ -5,6 +5,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    @users = User.all
+  end
   def show
     @user = User.find(params[:id])
   end
@@ -13,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to HeatWave!"
       redirect_to @user
     else
       render 'new'
@@ -40,14 +43,15 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    @user = User.find(params[:id])
-    redirect_to(root_path) unless current_user?(@user)
+      redirect_to(root_path) unless current_user?(@user) || current_admin?(@admin)
   end
 
   def signed_in_user
-    unless signed_in?
+    unless (signed_in? || admin_signed_in?)
       store_location
       redirect_to signin_url, notice: "Please sign in."
     end
   end
+
+
 end

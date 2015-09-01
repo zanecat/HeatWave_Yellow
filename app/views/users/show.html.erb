@@ -16,8 +16,13 @@
     </section>
   </aside>
 </div>
-<body>
-  <%= link_to "My Attributes", '#', class: "btn btn-large btn-success" %>
-  <%= link_to "Update Profie", edit_user_path(current_user), class: "btn btn-large btn-success" %>
-  <%= link_to "Feedback", '#', class: "btn btn-large btn-success" %>
-</body>
+
+<div>
+  <%= link_to "My Attributes", '#', class: "btn btn-default btn-lg btn-block" %>
+</div>
+<div>
+  <%= link_to "Update Profie", edit_user_path(current_user), class: "btn btn-default btn-lg btn-block" %>
+</div>
+<div>
+  <%= link_to "Feedback", '#', class: "btn btn-default btn-lg btn-block" %>
+</div>

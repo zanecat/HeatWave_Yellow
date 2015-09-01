@@ -1,0 +1,13 @@
+<% provide(:title, "Admin sign in") %>
+<div class="row">
+	<div class="span6 offset3">
+	<%= form_for(:admin_session, url: admin_sessions_path) do |f| %>
+		<%= f.label :username %>
+		<%= f.text_field :username %>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+		<%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>
+<h1>Sign in</h1>
